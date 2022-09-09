@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Technology - BBC News</title>
+
+        <style type="text/css">
+            /* it's likely that each element needs their own properties
+            and values. */
+
+            #top-bar {
+                /* since the bar doesn't occupy full width in the screen,
+                we need to limit it to 1100px so it occupies the center
+                of the screen only and leaves some breathing room left and right.*/
+                width: 1100px;
+                height: 40px;
+                background-color: white;
+                margin: 0 auto;
+
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+            }
+
+            #bbc-logo {
+                margin-left: 16px;
+                margin-top: 8px;
+                margin-right: 8px;
+                margin-bottom: 8px;
+                float: left;
+                width: 84px;
+            }
+
+            .topbar-section {
+                float: left;
+                border-left: 1px #CCCCCC solid;
+                height: 100%;
+            }
+
+            #signin-logo {
+                width: 25px;
+                margin: 10px;
+                float: left;
+            }
+
+            #signin-text {
+                font-weight: bold;
+                font-size: 90%;
+                position: relative;
+                top: 14px;
+                padding-right: 50px;
+            }
+
+            #wiggly-line {
+                float: left;
+                height: 40px;
+            }
+
+            #bell-icon {
+                width: 21px;
+                margin: 10px 10px;
+            }
+
+            #bell {
+                float: left;
+            }
+
+            .topbar-menu {
+                font-weight: bold;
+                font-size: 90%;
+                padding: 13px 14px 0px 15px;
+                height:  27px;
+            }
+
+            #search-bar {
+                background-color: #E4E3E4;
+                font-weight: bold;
+                border: none;
+                font-size: 14px;
+                padding: 5px;
+                margin: 5px 0px 0px 5px;
+                float: left;
+            }
+
+            #arrow {
+                width: 10px;
+                margin-left: 15px;
+            }
+
+            /* here I struggled to understand why the magnifying glass was in conflict
+                with the height of the search bar.
+                The solution was to work with the width of the magnifying glass,
+                not so much its positioning. */
+
+            #lupa {
+                width: 27px;
+                margin-top: 5px;
+            }
+
+            .clear-float {
+                clear:both;
+            }
+
+            #menu-bar-container {
+                border-top: 1px solid #CCCCCC;
+                background-color: #BB1919;
+                /* here we want width at 100% because we want it to occupy
+                all the possible width in the screen, opposed to the topbar menu*/
+                width: 100%;
+                height: 58px;
+                margin-top: -6px;
+            }
+
+            #menu-bar { 
+                width: 1100px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                padding: 0;
+                margin: 0 auto;
+                color: white;
+                font-size: 40px;
+                font-weight: normal;
+                padding-top: 8px;
+                padding-left: 15px;
+
+            }
+
+
+            #local-news a {
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+                position: relative;
+                top: -45px;
+                border: 1px #bb4545 solid;
+                width: 180px;
+                padding: 10px 10px 5px 15px;
+                float: right;
+            }
+
+            #local-news a:hover {
+                text-decoration: underline;
+            }
+
+            #menu-bar-2-container {
+                background-color: #A91717;
+                width: 100%;
+            }
+
+            #menu-bar-2 {
+                width: 1250px;
+                margin-top: -38px;
+                /*margin-left: 100px;*/
+                position: relative;
+                padding-left: 215px;
+                height: 30px;
+            }
+
+            #menu-bar-2 a {
+                color: white;
+                text-decoration: none;
+                padding: 0 10px;
+                border-right: 1px #bb4545 solid;
+                font-size: 13px;
+                font-weight: normal;
+                position: relative;
+                top: 7px;
+            }
+
+            #menu-bar-2 a:hover {
+                text-decoration: underline;
+            }
+
+            .no-border {
+                border: none !important;
+            }
+
+            #page-container {
+                width: 1100px;
+                margin: 0 auto;
+
+            }
+
+            h2 {
+                font-size: normal;
+                margin-top: 40px;
+                font-size: 20px;
+                border-bottom: 3px solid #BB1919;
+                width: 110px;
+            }
+
+            h3 a {
+                color: black;
+                font-size: 30px;
+                text-decoration: none;
+            }
+
+            h3 a:hover {
+                color: #1167A8;
+            }
+
+            #article-body {
+                color: #5A5A5A;
+                width: 240px;
+                font-size: 14px;
+            }
+
+            .topic-link {
+                text-decoration: none;
+                color: #BB1919;
+                border-left: 1px solid #CCCCCC;
+                padding-left: 5px;
+            }
+
+            #article-body a:hover {
+                color: #1167A8;
+            }
+
+            .date {
+                padding-right: 2px;
+                color: #5A5A5A;
+                font-size: 14px;
+            }
+
+            #article-container {
+                float: left;
+                width: 800px;
+
+            }
+
+            #asda-image {
+                width: 400px;
+                margin-top: 70px;
+                margin-left: -500px;
+                /*border-right: 1px solid #CCCCCC;*/
+                padding-right: 100px;
+            }
+
+            #article-hr {
+                width: 50px;
+                border-color: #BB1919;
+            }
+
+            .article-link {
+                color: black;
+                text-decoration: none;
+            }
+
+            #watch-listen {
+                margin-left: 0px;
+                width: 350px;
+                border-left: 1px solid #CCCCCC;
+                padding-left: 20px;
+                float: right;
+                margin-top: -300px;
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: normal;
+            }
+            
+            .article-side-image {
+                float: left;
+                width: 120px;
+                margin-right: 5px;
+            }
+
+            .watch-listen-link {
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .watch-listen-link:hover {
+                color: #1167A8;
+            }
+
+
+            .side-article {
+                margin-top: -30px;
+                left: 30px;
+                float: right;
+                width: 250px;
+                position: relative;
+                top: -57px;
+                font-size: 14px;
+            }
+
+            .no-border {
+                border-left: none;
+                padding: 0;
+            }
+
+            .border-right {
+                border-right: 1px solid #CCCCCC;
+            }
+        </style>
+    </head>
+
+        <body>
+            <!-- div que inclui todos os elementos da primeira barra de menu -->
+            <div id="top-bar">
+                <img id="bbc-logo" src="bbc.png">
+                
+                <div id="signin" class="topbar-section">
+                    <img id="signin-logo" src="sign in.png">
+
+                    <span id="signin-text">Sign in</span>
+
+                </div>
+
+                <div id="bell">
+                    <img id="wiggly-line" src="wiggly line.JPG">
+
+                    <img id="bell-icon" src="bell.JPG">
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    News
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    Sports
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    Weather
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    iPlayer
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    TV
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    Radio
+                </div>
+
+                <div class="topbar-section topbar-menu">
+                    More
+
+                    <img id="arrow" src="arrow.JPG">
+                </div>
+
+                <div class="topbar-section">
+                    <input id="search-bar" type="text" value="Search">
+            
+                    <a href="https://www.bbc.co.uk/search?q="><img id="lupa" src="lupa.JPG"></a>
+                </div>
+
+            </div>
+
+            <div class="clear-float"></div>
+                <div id="menu-bar-container">
+                    <div id="menu-bar">
+                        <h1>NEWS</h1>
+                        
+                        <div id="local-news">
+                            <a href="">Find local news</a>
+                        </div>
+                    </div>
+                </div>
+            <div class="clear-float"></div>
+                <div id="menu-bar-2-container">
+                    <div id="menu-bar-2">
+                        <a href="">Home</a>
+
+                        <a href="">UK</a>
+
+                        <a href="">World</a>
+
+                        <a href="">Business</a>
+
+                        <a href="">Politics</a>
+
+                        <a href="">Tech</a>
+
+                        <a href="">Science</a>
+
+                        <a href="">Health</a>
+
+                        <a href="">Education</a>
+
+                        <a href="">Entertainment & Arts</a>
+
+                        <a href="">Video & Audio</a>
+
+                        <a href="" class="no-border">More</a>
+                    </div>
+
+                </div>
+             </div>
+
+             <div class="clear-float"></div>
+
+             <div id="page-container">
+
+                <div id="main-article">
+                    <h2>Technology</h2>
+                    <div id="article-container">
+                        <h3><a href="">Asda bug exposed payment details</a></h3>
+                
+                        <div id="article-body">
+                        <p>Security vulnerabilities that put customers at risk have affected Asda's website for a couple of years,
+                        a security expert has revealed.</p>
+
+                        <p><span class="date">2 hours ago</span>  <a class="topic-link" href="">Technology</a></p>
+                        
+                        <hr id ="article-hr" align="left">
+
+                        <p><a class="article-link" href="">Surveillance firm hit in hack attack</a></p>
+                        <p><a class="article-link" href="">eBay flaw existed for months</a></p>
+                    </div> 
+                    </div>   
+                    <img id="asda-image" src="asda.gif">
+                </div>
+
+                <div class="clear-float"></div>
+
+                <div id="watch-listen">
+                    <h4>Watch/Listen</h4>
+
+                    <img class="article-side-image" src="video1.JPG">
+
+                    <div class="side-article">
+
+                    
+
+                        <p><a class="watch-listen-link" href="">UK science chief backs blockchains</a></p>
+
+                        <span class="date" id="hour">1 hour ago</span>
+                    </div>
+
+                    <div class="clear-float"></div>
+
+                    <img class="article-side-image" src="video2.JPG">
+
+                    <div class="side-article">
+                    
+
+                        <p><a class="watch-listen-link" href="">Drone register gives 'accountability'</a></p>
+
+                        <span class="date border-right" id="hour">18 January 2016 </span><br><a class="topic-link no-border" href="">Technology</a>
+                    </div>
+
+                    <div class="clear-float"></div>
+
+                    <img class="article-side-image" src="video3.JPG">
+
+                    <div class="side-article">
+                    
+
+                        <p><a class="watch-listen-link" href="">SpaceX rocket explodes during landing</a></p>
+
+                        <span class="date border-right" id="hour">18 January 2016 </span><br><a class="topic-link no-border" href="">Science & Environment</a>
+                    </div>
+
+                    <div class="clear-float"></div>
+
+                    <img class="article-side-image" src="video4.JPG">
+
+                    <div class="side-article">
+                    
+
+                        <p><a class="watch-listen-link" href="">What is a VPN service?</a></p>
+
+                        <span class="date border-right" id="hour">18 January 2016 </span><br><a class="topic-link no-border" href="">Technology</a>
+                    </div>
+
+                    <div class="clear-float"></div>
+
+                    <img class="article-side-image" src="video5.JPG">
+
+                    <div class="side-article">
+                    
+
+                        <p><a class="watch-listen-link" href="">Charge your phone with a hand crank</a></p>
+
+                        <span class="date border-right" id="hour">18 January 2016 </span><br><a class="topic-link no-border" href="">Technology</a>
+                    </div>
+                </div>
+            </div>
+                           
+                    
+                
+        </body>
+</html>
